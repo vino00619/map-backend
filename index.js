@@ -21,7 +21,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mon
     console.log("mongoDB connected")
 })
 .catch((err)=>console.log(err));
-//.
+
 
 
 app.use(cors())
