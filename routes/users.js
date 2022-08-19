@@ -4,6 +4,7 @@ const User = require("../models/User");
 //comment added
 const bcrypt = require("bcrypt");
 //comment added
+//comment added
 //register
 router.post("/register", async(req, res)=>{
     try{
