@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 //const Pin = require("../models/Pin");
+//comment added
 const bcrypt = require("bcrypt");
 
 //register
