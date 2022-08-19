@@ -3,7 +3,7 @@ const User = require("../models/User");
 //const Pin = require("../models/Pin");
 //comment added
 const bcrypt = require("bcrypt");
-
+//comment added
 //register
 router.post("/register", async(req, res)=>{
     try{
