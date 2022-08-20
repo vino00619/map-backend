@@ -7,6 +7,7 @@ router.post("/", async (req, res)=>{
     const newPin = new Pin(req.body);
     try{
         const savedPin = await newPin.save();
+        res.header("Access-Control-Allow-Origin", "*");
         res.send({message:savedPin});
         res.status(200).json(savedPin)
     } catch(err){
@@ -19,6 +20,7 @@ router.post("/", async (req, res)=>{
 router.get("/", async (req, res)=>{
     try{
         const pins = await Pin.find();
+        res.header("Access-Control-Allow-Origin", "*");
         // res.send({message:pins});
         res.status(200).json(pins);
     }catch(err){

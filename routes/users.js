@@ -20,6 +20,7 @@ router.post("/register", async(req, res)=>{
 
         //save user and send response
         const user = await newUser.save();
+        res.header("Access-Control-Allow-Origin", "*");
         res.send({message:user._id});
         res.status(200).json(user._id);
     }catch(err){
