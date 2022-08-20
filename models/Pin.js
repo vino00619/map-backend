@@ -23,11 +23,11 @@ const PinSchema = new mongoose.Schema(
             max:5,
         },
         lat:{
-            type:String,
+            type:Number,
             require:true,
         },
         long:{
-            type:String,
+            type:Number,
             require:true,
         },
     },
