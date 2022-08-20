@@ -25,7 +25,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mon
 
 
 app.use(cors({
-    origin: ["https://superb-speculoos-2f9d9c.netlify.app/"],
+    origin: "https://superb-speculoos-2f9d9c.netlify.app/",
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
     origin: true,
