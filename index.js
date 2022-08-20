@@ -24,12 +24,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mon
 
 
 
-app.use(cors({
-    origin: "https://superb-speculoos-2f9d9c.netlify.app/",
-    methods: ["GET", "POST", "DELETE"],
-    credentials: true,
-    origin: true,
-  }))
+app.use(cors());
 
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
