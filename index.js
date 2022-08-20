@@ -1,5 +1,6 @@
 const express = require("express")
-const mongoose = require("mongoose")
+require("./config")
+// const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 const userRoute = require("./routes/users")
 const pinRoute = require("./routes/pins")
@@ -17,18 +18,18 @@ app.use(express.json());
 
 //mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`)
 //process.env.MONGO_URL
-mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
-    console.log("mongoDB connected")
-})
-.catch((err)=>console.log(err));
+// mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
+//     console.log("mongoDB connected")
+// })
+// .catch((err)=>console.log(err));
 
 
 
 app.use(cors());
-app.get("/", (req, res) => {
-    res.send("Backend for map-bakcend running");
-  });
-  app.use("/api/users", userRoute);
+// app.get("/", (req, res) => {
+//     res.send("Backend for map-bakcend running");
+//   });
+app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
 
