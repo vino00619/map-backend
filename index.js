@@ -25,8 +25,10 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mon
 
 
 app.use(cors());
-
-app.use("/api/users", userRoute);
+app.get("/", (req, res) => {
+    res.send("Backend for map-bakcend running");
+  });
+  app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
 
