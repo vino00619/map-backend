@@ -26,9 +26,9 @@ app.use(express.json());
 
 
 app.use(cors());
-// app.get("/", (req, res) => {
-//     res.send("Backend for map-bakcend running");
-//   });
+app.get("/", (req, res) => {
+    res.send("Backend for map-bakcend running");
+  });
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
