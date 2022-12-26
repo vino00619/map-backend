@@ -12,21 +12,27 @@ const cors = require('cors');
 //     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
 //     next(); 
 // })
+const corsOptions ={
+  origin:'https://travel-stories-app.netlify.app/', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
+
 dotenv.config();
 
 app.use(express.json());
 
-//mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`)
-//process.env.MONGO_URL
-// mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
-//     console.log("mongoDB connected")
-// })
-// .catch((err)=>console.log(err));
-//...
+mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`)
+process.env.MONGO_URL
+mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
+    console.log("mongoDB connected")
+})
+.catch((err)=>console.log(err));
+// ...
 
 
 
-app.use(cors());
 app.get("/", (req, res) => {
     res.send("Backend for map-bakcend running");
   });
