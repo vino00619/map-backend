@@ -23,8 +23,8 @@ dotenv.config();
 
 app.use(express.json());
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`)
-process.env.MONGO_URL
+// mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`)
+// process.env.MONGO_URL
 mongoose.connect(`mongodb+srv://${process.env.MONGO_URL}:vino@cluster0.yls3a.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
     console.log("mongoDB connected")
 })
