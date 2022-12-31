@@ -6,20 +6,20 @@ const userRoute = require("./routes/users")
 const pinRoute = require("./routes/pins")
 const app = express();
 const cors = require('cors');
-// app.use((req,res,next)=>{
-//     res.setHeader('Access-Control-Allow-Origin','*');
-//     res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-//     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-//     next(); 
-// })
-// app.use(cors());
+app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+    next(); 
+})
+app.use(cors());
 
-const corsOptions ={
-  origin:'https://travel-stories-app.netlify.app/', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+// const corsOptions ={
+//   origin:'https://travel-stories-app.netlify.app/', 
+//   credentials:true,            //access-control-allow-credentials:true
+//   optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
 
 dotenv.config();
 
