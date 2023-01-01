@@ -13,7 +13,7 @@ const cors = require('cors');
 //     next(); 
 // })
 app.use(cors());
-
+console.log("cors updated");
 // const corsOptions ={
 //   origin:'https://travel-stories-app.netlify.app/', 
 //   credentials:true,            //access-control-allow-credentials:true
