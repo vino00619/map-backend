@@ -12,14 +12,14 @@ const cors = require('cors');
 //     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
 //     next(); 
 // })
-// app.use(cors());
+app.use(cors());
 
-const corsOptions ={
-  origin:'https://travel-stories-app.netlify.app/', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+// const corsOptions ={
+//   origin:'https://travel-stories-app.netlify.app/', 
+//   credentials:true,            //access-control-allow-credentials:true
+//   optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
 
 dotenv.config();
 
