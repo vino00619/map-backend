@@ -6,13 +6,13 @@ const userRoute = require("./routes/users")
 const pinRoute = require("./routes/pins")
 const app = express();
 const cors = require('cors');
-const addHeaders = (req,res,next)=>{
+app.use((req,res,next)=>{
     res.setHeader('Access-Control-Allow-Origin','*');
     res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
     res.setHeader('Access-Control-Allow-Credentials', true);
     next(); 
-}
+})
 app.use(cors());
 console.log("cors updated");
 // const corsOptions ={
@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
     res.send("Backend for map-bakcend running");
   });
 app.use("/api/users", userRoute);
-app.use("/api/pins", addHeaders, pinRoute);
+app.use("/api/pins", pinRoute);
 
 
 app.listen(process.env.PORT || 8800, () => {
