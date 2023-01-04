@@ -24,7 +24,7 @@ router.get("/", async (req, res)=>{
         res.header("Access-Control-Allow-Origin", "*");
         // res.send({message:pins});
         //res.status(200).json(pins);
-        res.status(200).json(req);
+        res.status(200).json({"1": "hello world"});
         console.log(pins)
     }catch(err){
         res.status(500).json(err);
